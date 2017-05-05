@@ -395,8 +395,8 @@
          (target-uri (ignore-errors (parse-target-string target))))
 
     ;; some verbosity about the parsing "magic"
-    (log-message :info "SOURCE: ~s" source)
-    (log-message :info "TARGET: ~s" target)
+    ;; temporary removed (log-message :info "SOURCE: ~s" source)
+    ;; temporary removed (log-message :info "TARGET: ~s" target)
 
     (cond ((and (null source-uri)
                 (null target-uri)
