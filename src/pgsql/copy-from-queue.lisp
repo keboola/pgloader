@@ -85,10 +85,9 @@
 
         (log-message :error "[PostgreSQL ~s] ~a" table-name condition)
         (log-message :error "Copy Batch reconnecting to PostgreSQL")
-
        ;; in order to avoid Socket error in "connect": ECONNREFUSED if we
        ;; try just too soon, wait a little
-       (sleep 2)
+       (sleep 30)
 
         (cl-postgres:reopen-database db)
         (copy-batch table columns batch batch-rows
