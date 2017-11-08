@@ -1,0 +1,9 @@
+version: '2'
+services:
+  app:
+    build: .
+    image: pgloader
+    volumes:
+      - .:/code
+    tty: true
+    stdin_open: true
