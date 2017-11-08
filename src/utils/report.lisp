@@ -79,7 +79,7 @@
 
       (setf (pgstate-read (state-postload state)) total-read)
       (setf (pgstate-rows (state-postload state)) total-rows)
-      (setf (pgstate-errs (state-postload state)) total-errs))
-
-    (pretty-print *report-stream* state format)))
-
+      (setf (pgstate-errs (state-postload state)) total-errs)
+      (pretty-print *report-stream* state format)
+      (format t "~&pgloader imported ~d rows. Source file contains ~d rows~%" total-rows total-read)
+      (format t "~&import time ~a~%" (pgstate-secs (state-postload state))))))
