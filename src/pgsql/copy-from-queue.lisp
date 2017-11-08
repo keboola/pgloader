@@ -83,8 +83,8 @@
 
       (postgresql-unavailable (condition)
 
-        (log-message :error "[PostgreSQL ~s] ~a" table-name condition)
-        (log-message :error "Copy Batch reconnecting to PostgreSQL")
+        (log-message :warning "[PostgreSQL ~s] ~a" table-name condition)
+        (log-message :warning "Copy Batch reconnecting to PostgreSQL")
        ;; in order to avoid Socket error in "connect": ECONNREFUSED if we
        ;; try just too soon, wait a little
        (sleep 30)
